@@ -1,7 +1,17 @@
 *.dat
 *.dot
+*.gz
+*.h5
 *.jpg
+*.npy
+*.pb
 *.pkl
 *.png
+*.profile-empty
+*.tsv
+*.v2
+.idea
+.ipynb_checkpoints
 datasets
+tmp
 tmp.py
