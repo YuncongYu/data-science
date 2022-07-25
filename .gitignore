@@ -13,5 +13,8 @@
 .idea
 .ipynb_checkpoints
 datasets
+homl/ch12_custom_models_and_training_with_tensorflow/model/
+homl/ch12_custom_models_and_training_with_tensorflow/my_logs/
+pytorch/data/
 tmp
 tmp.py
