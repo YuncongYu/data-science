@@ -1,3 +1,4 @@
+*.JPEG
 *.dat
 *.dot
 *.gz
@@ -15,6 +16,7 @@
 datasets
 homl/ch12_custom_models_and_training_with_tensorflow/model/
 homl/ch12_custom_models_and_training_with_tensorflow/my_logs/
+homl/ch13_Loading_and_Preprocessing_Data_with_TensorFlow/data/
 pytorch/data/
 tmp
 tmp.py
