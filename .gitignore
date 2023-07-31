@@ -1,3 +1,4 @@
+__pycache__
 *.JPEG
 *.dat
 *.dot
@@ -21,5 +22,6 @@ homl/ch13_Loading_and_Preprocessing_Data_with_TensorFlow/data/
 homl/ch14_deep_computer_vision_using_convolutional_neural_networks/data/preprocessed
 homl/ch15_processing_sequences_using_rnns_and_cnns/models
 miscellaneous/pytorch/data/
+scratch*
 tmp
 tmp.py
