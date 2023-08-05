@@ -6,7 +6,7 @@ import numpy as np
 
 def plot_images(
     images_norm: Sequence[Sequence[Sequence[float]]],
-    labels: Sequence[int],
+    labels: Optional[Sequence[int]] = None,
     label_text: str = "Label",
     n_cols: int = 10,
     sup_title: Optional[str] = None,
@@ -20,9 +20,12 @@ def plot_images(
         figsize=(20, n_rows * 2 + 1),
         constrained_layout=True,
     )
+    if labels is None:
+        labels = [None] * n_images
     for ax, img, label in zip(axs.ravel(), images_norm, labels):
         ax.imshow(img, cmap="gray")
         ax.axis("off")
-        ax.set_title(f"{label_text}: {label}", fontsize="large", fontweight="bold")
+        if label is not None:
+            ax.set_title(f"{label_text}: {label}", fontsize="large", fontweight="bold")
     if sup_title is not None:
         fig.suptitle(sup_title, fontsize="x-large", fontweight="bold")
