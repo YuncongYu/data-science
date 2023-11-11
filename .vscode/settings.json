@@ -4,5 +4,13 @@
     },
     "python.formatting.provider": "none",
     "python.linting.mypyEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-k>": false
+    },
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    }
 }
