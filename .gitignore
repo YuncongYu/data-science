@@ -21,6 +21,7 @@ homl/ch12_custom_models_and_training_with_tensorflow/my_logs/
 homl/ch13_Loading_and_Preprocessing_Data_with_TensorFlow/data/
 homl/ch14_deep_computer_vision_using_convolutional_neural_networks/data/preprocessed
 homl/ch15_processing_sequences_using_rnns_and_cnns/models
+homl/ch19_training_and_deploying_tensorflow_models_at_scale/ch19_01_serving_a_tensorflow_model/learn-service-on-gcp-15c18be80a3f.json
 miscellaneous/pytorch/data/
 scratch*
 tmp
