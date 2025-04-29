@@ -1,28 +1,28 @@
-[build-system]
-requires = ["setuptools", "setuptools-scm"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "data-science"
+version = "0.1.0"
+description = "Yuncong's project to study data science."
+keywords = ["data science", "machine learning", "artificial intelligence"]
 authors = [
     {name = "Yuncong Yu", email = "yuncong.yu@outlook.com"},
 ]
-description = "Yuncong's Project to Study Data Science"
-keywords = ["data science", "machine learning", "artificial intelligence"]
-license = {text = "MIT"}
-classifiers = [
+readme = "README.md"
+lassifiers = [
     "Intended Audience :: Science/Research",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
 ]
-requires-python = ">=3.7"
+requires-python = ">=3.11"
 dependencies = [
+    "jupyter>=1.1.1",
+    "pydantic>=2.11.3",
+    "scikit-learn>=1.6.1",
+    "tensorflow[and-cuda]>=2.19.0",
 ]
-dynamic = ["version", "readme"]
 
-[tool.setuptools]
-packages = ["data_science"]
-
-[tool.setuptools.dynamic]
-readme = { file = ["README.md"], content-type = "text/markdown" }
-version = { attr = "data_science.__version__" }
+[project.optional-dependencies]
+test = [
+    "mypy>=1.15.0",
+    "pytest>=8.3.5",
+    "ruff>=0.11.7",
+]

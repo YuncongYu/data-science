@@ -31,3 +31,7 @@ miscellaneous/pytorch/data/
 scratch*
 tmp
 tmp.py
+
+# pixi environments
+.pixi
+*.egg-info
