@@ -14,9 +14,13 @@ lassifiers = [
 ]
 requires-python = ">=3.11"
 dependencies = [
+    "imageio>=2.37.0",
     "jupyter>=1.1.1",
+    "matplotlib>=3.10.1",
     "pydantic>=2.11.3",
     "scikit-learn>=1.6.1",
+    "tensorflow-docs",
+    "tensorflow-probability[tf]>=0.25.0",
     "tensorflow[and-cuda]>=2.19.0",
 ]
 
@@ -26,3 +30,6 @@ test = [
     "pytest>=8.3.5",
     "ruff>=0.11.7",
 ]
+
+[tool.uv.sources]
+tensorflow-docs = { git = "https://github.com/tensorflow/docs" }
