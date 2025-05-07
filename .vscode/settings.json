@@ -9,5 +9,8 @@
     },
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1
-    }
+    },
+    "python.analysis.extraPaths": [
+        "/home/yuncong-yu/projects/data-science/.venv/lib/python3.12/site-packages"
+    ]
 }
