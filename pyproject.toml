@@ -45,6 +45,17 @@ dev = ["lint", "test"]
 
 [tool.ruff]
 line-length = 88
+extend-exclude = [
+    "experiments/homl/ch02*.ipynb", 
+    "experiments/homl/ch03*.ipynb", 
+    "experiments/homl/ch04*.ipynb",
+    "experiments/homl/ch05*.ipynb",
+    "experiments/homl/ch06*.ipynb",
+    "experiments/homl/ch07*.ipynb",
+    "experiments/homl/ch08*.ipynb",
+    "experiments/homl/ch09*.ipynb",
+    "experiments/homl/ch10*.ipynb",
+]
 
 [tool.mypy]
 strict = true
