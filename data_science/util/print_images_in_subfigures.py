@@ -19,7 +19,9 @@ def print_images_in_subfigures(
     for ax, img, label in zip(axs.ravel(), images, labels):
         ax.imshow(img, cmap="gray")
         ax.set_title(
-            f"{subtitle_prefix + ': ' if subtitle_prefix else ''}{label}", fontsize="x-large", fontweight="bold"
+            f"{subtitle_prefix + ': ' if subtitle_prefix else ''}{label}",
+            fontsize="x-large",
+            fontweight="bold",
         )
 
     for ax in axs.ravel():
