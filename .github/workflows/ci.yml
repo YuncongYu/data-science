@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Pixi
+        uses: prefix-dev/setup-pixi@v0.9.4
+        with:
+          pixi-version: latest
+          cache: true
+
+      - name: Lint
+        run: |
+          pixi run -e dev ruff check .
+
+      - name: Format Check
+        run: |
+          pixi run -e dev ruff format --check .
+
+      - name: Type Check
+        run: |
+          pixi run -e dev mypy .
+
+      - name: Unit Test
+        run: |
+          pixi run -e dev pytest
+    
+      - name: Coverage
+        run: |
+          pixi run -e dev pytest \
+            --cov=data_science \
+            -- cov-report=xml \
+            -- cov-report=term-missing
+    

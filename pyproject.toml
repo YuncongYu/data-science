@@ -35,6 +35,7 @@ format-check = "ruff format --check ."
 
 [tool.pixi.feature.test.dependencies]
 pytest = "*"
+pytest-cov = ">=7.0.0,<8"
 
 [tool.pixi.feature.test.tasks]
 test = "pytest"
@@ -44,6 +45,9 @@ dev = ["lint", "test"]
 
 [tool.ruff]
 line-length = 88
+
+[tool.mypy]
+strict = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
