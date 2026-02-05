@@ -26,6 +26,7 @@ numpy = ">=2.4.1,<3"
 [tool.pixi.feature.lint.dependencies]
 ruff = "*"
 mypy = "*"
+pre-commit = "*"
 
 [tool.pixi.feature.lint.tasks]
 ruff = "ruff"
