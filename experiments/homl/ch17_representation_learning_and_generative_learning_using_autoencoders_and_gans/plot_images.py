@@ -6,7 +6,7 @@ import numpy as np
 
 def plot_images(
     images_norm: Sequence[Sequence[Sequence[float]]],
-    labels: Optional[Sequence[int]] = None,
+    labels: Optional[Sequence[int | None]] = None,
     label_text: str = "Label",
     n_cols: int = 10,
     sup_title: Optional[str] = None,

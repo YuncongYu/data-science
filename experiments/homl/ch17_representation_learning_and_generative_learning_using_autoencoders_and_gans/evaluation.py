@@ -27,14 +27,14 @@ class Evaluation:
             self.classes_ = np.array(json.load(fp))
 
         plot_images.plot_images(
-            images_norm=self.x_test[:n_plots],
-            labels=self.classes_[self.y_test[:n_plots]],
+            images_norm=self.x_test[:n_plots],  # type: ignore
+            labels=self.classes_[self.y_test[:n_plots]],  # type: ignore
             sup_title="Original Test Data",
         )
 
         plot_images.plot_images(
             images_norm=x_test_rec[:n_plots] * 255,
-            labels=self.classes_[self.y_test[:n_plots]],
+            labels=self.classes_[self.y_test[:n_plots]],  # type: ignore[arg-type]
             sup_title="Reconstructed Test Data",
         )
 

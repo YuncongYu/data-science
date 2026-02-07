@@ -6,7 +6,7 @@ import tensorflow as tf
 import tensorflow.keras
 
 
-def main():
+def main() -> None:
     print(f"Tensor Flow Version: {tf.__version__}")
     print(f"Keras Version: {tensorflow.keras.__version__}")
     print()

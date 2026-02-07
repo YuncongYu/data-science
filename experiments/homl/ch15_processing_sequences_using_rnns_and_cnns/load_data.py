@@ -6,7 +6,7 @@ import pandas as pd
 
 def load_data(
     n_steps_ahead: int = 10, print_result: bool = True
-) -> Dict[str, Dict[str, np.ndarray]]:
+) -> Dict[str, pd.DataFrame]:
     data = np.load("dataset.npy")
     n_instances = 10_000
     n_steps = 50
@@ -58,6 +58,6 @@ def load_data(
             for xy_label, xy in ds.items():
                 print("  ", xy_label, ":")
                 for split_name, split in xy.items():
-                    print("    ", split_name, ": ", split.shape)
+                    print("    ", split_name, ": ", np.asarray(split).shape)
 
     return dataset

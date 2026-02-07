@@ -5,11 +5,11 @@ from typing import Optional, Sequence
 
 def print_images(
     images: Sequence[np.ndarray],
-    titles: Optional[str] = None,
-    fig_titles: Optional[Sequence[str]] = None,
+    titles: Optional[list[str | None]] = None,
+    fig_titles: Optional[Sequence[str | None]] = None,
 ) -> None:
-    def print_image(image: np.ndarray, fig_title: Optional[str] = None):
-        fig, ax = plt.subplots(figsize=plt.figaspect(image))
+    def print_image(image: np.ndarray, fig_title: Optional[str] = None) -> None:
+        fig, ax = plt.subplots(figsize=plt.figaspect(image))  # type: ignore
         fig.subplots_adjust(0, 0, 1, 1)
         ax.imshow(image.astype(np.uint8))
         ax.axis("off")
@@ -38,4 +38,4 @@ if __name__ == "__main__":
 
     image_names = ["china.jpg", "flower.jpg"]
     images = np.array([load_sample_image(name) for name in image_names])
-    print_images(images)
+    print_images(images)  # type: ignore[arg-type]
