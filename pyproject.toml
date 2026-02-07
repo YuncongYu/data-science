@@ -14,8 +14,8 @@ requires = ["hatchling"]
 channels = ["conda-forge"]
 platforms = ["linux-64"]
 
-# [tool.pixi.pypi-dependencies]
-# data_science = { path = ".", editable = true }
+[tool.pixi.pypi-dependencies]
+data_science = { path = ".", editable = true }
 
 [tool.pixi.tasks]
 ci = { depends-on = ["lint", "test"]}
@@ -44,7 +44,7 @@ ruff = "ruff"
 check = "ruff check ."
 format = "ruff format ."
 format-check = "ruff format --check ."
-mypy = "mypy ."
+type-check = "mypy ."
 
 [tool.pixi.feature.test.dependencies]
 pytest = "*"
