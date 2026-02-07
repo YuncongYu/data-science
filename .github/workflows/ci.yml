@@ -38,6 +38,6 @@ jobs:
         run: |
           pixi run -e dev pytest \
             --cov=data_science \
-            -- cov-report=xml \
-            -- cov-report=term-missing
+            --cov-report=xml \
+            --cov-report=term-missing
     
