@@ -2,13 +2,16 @@
 authors = [{ name = "Yuncong Yu", email = "yuncong.yu@outlook.com" }]
 dependencies = []
 name = "data-science"
+dynamic = ["version"]
 requires-python = ">= 3.11"
-version = "0.1.0"
 keywords = ["data science", "machine learning", "artificial intelligence", "statistics", "visual analytics"]
 
 [build-system]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
-requires = ["hatchling"]
+
+[tool.hatch.version]
+source = "vcs"
 
 [tool.pixi.workspace]
 channels = ["conda-forge"]
