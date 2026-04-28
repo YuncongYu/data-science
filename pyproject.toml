@@ -37,6 +37,7 @@ tensorflow = ">=2.19.1,<3"
 
 [tool.pixi.feature.lint.dependencies]
 ruff = "*"
+isort = "*"
 mypy = "*"
 pre-commit = "*"
 pandas-stubs = ">=3.0.0.260204,<4"
@@ -48,6 +49,7 @@ check = "ruff check ."
 format = "ruff format ."
 format-check = "ruff format --check ."
 type-check = "mypy ."
+pre-commit = "pre-commit run --all-files"
 
 [tool.pixi.feature.test.dependencies]
 pytest = "*"
@@ -62,8 +64,8 @@ dev = ["lint", "test"]
 [tool.ruff]
 line-length = 88
 extend-exclude = [
-    "experiments/homl/ch02*.ipynb", 
-    "experiments/homl/ch03*.ipynb", 
+    "experiments/homl/ch02*.ipynb",
+    "experiments/homl/ch03*.ipynb",
     "experiments/homl/ch04*.ipynb",
     "experiments/homl/ch05*.ipynb",
     "experiments/homl/ch06*.ipynb",
@@ -81,4 +83,3 @@ exclude = [""]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
-
