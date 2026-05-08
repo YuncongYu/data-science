@@ -2517,8 +2517,8 @@ packages:
   timestamp: 1750239039316
 - pypi: ./
   name: data-science
-  version: 0.1.1.dev1+g7eb1da0d3
-  sha256: 0c16c12501b1e480ce0040208a1736152f123830db324ab0de0db4be007b3f30
+  version: 0.1.1.dev3+g54a403045.d20260508
+  sha256: 47c48563674d2718ef389c8ecd3ebaa282536659f8662d65f47ffda4c585ed80
   requires_python: '>=3.11'
 - conda: https://conda.anaconda.org/conda-forge/linux-64/dbus-1.16.2-h24cb091_1.conda
   sha256: 8bb557af1b2b7983cf56292336a1a1853f26555d9c6cecf1e5b2b96838c9da87
