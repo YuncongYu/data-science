@@ -12,7 +12,7 @@ DATA_URL = (
 )
 
 
-@st.cache  # type: ignore
+@st.cache
 def load_data(nrows: int) -> pd.DataFrame:
     data = pd.read_csv(DATA_URL, nrows=nrows)
     # lowercase = lambda x: str(x).lower()
