@@ -1,4 +1,4 @@
-__pycache__
+# Files types
 *.JPEG
 *.dat
 *.dot
@@ -14,8 +14,21 @@ __pycache__
 *.v2
 .idea
 .ipynb_checkpoints
+
+# Build, cache, etc.
 build/
-data_science.egg-info/
+__pycache__
+*.egg-info
+
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# IDEs
+.idea/*
+.vscode/*
+
+# Content
 homl/ch12_custom_models_and_training_with_tensorflow/model/
 homl/ch12_custom_models_and_training_with_tensorflow/my_logs/
 homl/ch13_Loading_and_Preprocessing_Data_with_TensorFlow/data/
@@ -28,13 +41,8 @@ homl/ch19_training_and_deploying_tensorflow_models_at_scale/ch19_02_deploying_a_
 homl/ch19_training_and_deploying_tensorflow_models_at_scale/ch19_02_deploying_a_model_to_a_mobile_or_embedded_device/bert/variables/variables.data-00000-of-00001
 homl/ch19_training_and_deploying_tensorflow_models_at_scale/ch19_02_deploying_a_model_to_a_mobile_or_embedded_device/bert/variables/variables.index
 miscellaneous/pytorch/data/
+
+# Temporary files
 scratch*
 tmp
 tmp.py
-
-# pixi environments
-.pixi
-*.egg-info
-# pixi environments
-.pixi/*
-!.pixi/config.toml
