@@ -11,10 +11,14 @@
         "vscodevim.vim": 1
     },
     "python.analysis.extraPaths": [
-        "/home/yuncong-yu/projects/data-science/.venv/lib/python3.12/site-packages"
+        "${workspaceFolder}/.venv/lib/python3.14/site-packages"
     ],
-    "python-envs.defaultEnvManager": "ms-python.python:system",
-    "python-envs.pythonProjects": [],
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.executeInFileDir": true,
+    "python.envFile": "${workspaceFolder}/.env",
+    "python-envs.defaultEnvManager": "ms-python.python:venv",
     "python.testing.pytestArgs": [
         "tests"
     ],
