@@ -3,10 +3,9 @@ from typing import Sequence
 
 import matplotlib.pyplot as plt
 import numpy as np
+import plot_images
 import tensorflow as tf
 from sklearn.manifold import TSNE
-
-import plot_images
 
 
 class Evaluation:

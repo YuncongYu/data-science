@@ -2,10 +2,9 @@ import json
 from typing import Tuple
 
 import numpy as np
+import plot_images
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
-
-import plot_images
 
 
 def load_data(

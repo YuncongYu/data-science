@@ -1,6 +1,6 @@
-import matplotlib.pyplot as plt
 from typing import Optional, Sequence
 
+import matplotlib.pyplot as plt
 import numpy as np
 
 
