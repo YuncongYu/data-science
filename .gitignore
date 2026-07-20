@@ -28,6 +28,9 @@ __pycache__
 .idea/*
 .vscode/*
 
+# Environment
+.env
+
 # Content
 homl/ch12_custom_models_and_training_with_tensorflow/model/
 homl/ch12_custom_models_and_training_with_tensorflow/my_logs/
