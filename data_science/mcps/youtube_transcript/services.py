@@ -1,11 +1,13 @@
 import os
+from typing import cast
 
 from requests import Session
 from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api._transcripts import FetchedTranscript
 from youtube_transcript_api.formatters import TextFormatter
 from youtube_transcript_api.proxies import WebshareProxyConfig
 
-from .utils import extract_video_id
+from .util import extract_video_id
 
 
 class YouTubeTranscriptService:
@@ -28,7 +30,9 @@ class YouTubeTranscriptService:
                 proxy_password=proxy_password,
             )
             http_client = Session()
-            http_client.proxies = proxy_config.to_requests_dict()
+            http_client.proxies.update(
+                cast(dict[str, str], proxy_config.to_requests_dict())
+            )
             return YouTubeTranscriptApi(http_client=http_client)
 
         return YouTubeTranscriptApi()
@@ -36,7 +40,7 @@ class YouTubeTranscriptService:
     def fetch(
         self,
         video_url_or_id: str,
-    ):
+    ) -> FetchedTranscript:
         """Fetch transcript."""
         video_id = extract_video_id(video_url_or_id)
         return self.api.fetch(video_id)

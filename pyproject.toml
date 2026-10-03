@@ -45,7 +45,7 @@ dependencies = [
 
 [project.optional-dependencies]
 mcp = [
-    "mcp[cli,mcp]>=1.28.1",
+    "mcp[cli]>=2,<3",
     "youtube-transcript-api>=1.2.4",
 ]
 
