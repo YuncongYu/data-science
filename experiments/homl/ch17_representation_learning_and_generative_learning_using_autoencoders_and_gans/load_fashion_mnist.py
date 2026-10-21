@@ -1,5 +1,4 @@
 import json
-from typing import Tuple
 
 import numpy as np
 import plot_images
@@ -9,10 +8,10 @@ from sklearn.model_selection import train_test_split
 
 def load_data(
     n_plots: int = 10,
-) -> Tuple[
-    Tuple[np.ndarray, np.ndarray],
-    Tuple[np.ndarray, np.ndarray],
-    Tuple[np.ndarray, np.ndarray],
+) -> tuple[
+    tuple[np.ndarray, np.ndarray],
+    tuple[np.ndarray, np.ndarray],
+    tuple[np.ndarray, np.ndarray],
 ]:
     (
         (x_train_valid, y_train_valid),

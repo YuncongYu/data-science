@@ -1,4 +1,4 @@
-from typing import Optional, Sequence
+from collections.abc import Sequence
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,10 +6,10 @@ import numpy as np
 
 def plot_images(
     images_norm: Sequence[Sequence[Sequence[float]]],
-    labels: Optional[Sequence[int | None]] = None,
+    labels: Sequence[int | None] | None = None,
     label_text: str = "Label",
     n_cols: int = 10,
-    sup_title: Optional[str] = None,
+    sup_title: str | None = None,
 ) -> None:
     n_images = len(images_norm)
     n_rows = round(np.ceil(n_images / n_cols))

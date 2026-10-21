@@ -1,5 +1,5 @@
 import json
-from typing import Sequence
+from collections.abc import Sequence
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -43,6 +43,6 @@ class Evaluation:
         tsne = TSNE()
         x_test_2d = tsne.fit_transform(x_test_embedding)
 
-        fig, ax = plt.subplots()
+        _fig, ax = plt.subplots()
         ax.scatter(x_test_2d[:, 0], x_test_2d[:, 1], c=self.y_test, s=10, cmap="tab10")
         ax.axis("off")

@@ -1,11 +1,11 @@
-from typing import Optional, Sequence
+from collections.abc import Sequence
 
 import matplotlib.pyplot as plt
 
 
 def print_images_in_subfigures(
     images: Sequence[Sequence[int]],
-    labels: Optional[Sequence[Optional[int]]],
+    labels: Sequence[int | None] | None,
     subtitle_prefix: str = "",
     title: str = "",
     figsize: Sequence[float] = (15, 8),

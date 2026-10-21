@@ -1,4 +1,4 @@
-from typing import Optional, Sequence
+from collections.abc import Sequence
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,10 +6,10 @@ import numpy as np
 
 def print_images(
     images: Sequence[np.ndarray],
-    titles: Optional[list[str | None]] = None,
-    fig_titles: Optional[Sequence[str | None]] = None,
+    titles: list[str | None] | None = None,
+    fig_titles: Sequence[str | None] | None = None,
 ) -> None:
-    def print_image(image: np.ndarray, fig_title: Optional[str] = None) -> None:
+    def print_image(image: np.ndarray, fig_title: str | None = None) -> None:
         fig, ax = plt.subplots(figsize=plt.figaspect(image))  # type: ignore
         fig.subplots_adjust(0, 0, 1, 1)
         ax.imshow(image.astype(np.uint8))

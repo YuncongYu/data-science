@@ -1,12 +1,10 @@
-from typing import Dict
-
 import numpy as np
 import pandas as pd
 
 
 def load_data(
     n_steps_ahead: int = 10, print_result: bool = True
-) -> Dict[str, pd.DataFrame]:
+) -> dict[str, pd.DataFrame]:
     data = np.load("dataset.npy")
     n_instances = 10_000
     n_steps = 50

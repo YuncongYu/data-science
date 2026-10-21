@@ -2,6 +2,7 @@ from typing import Annotated
 
 from mcp.server import MCPServer
 from pydantic import Field
+from youtube_transcript_api import YouTubeTranscriptApiException
 
 from .services import YouTubeTranscriptService
 
@@ -37,8 +38,8 @@ def get_youtube_transcript(
 
     try:
         return _service.get_transcript_text(video_url_or_id)
-    except Exception as e:
-        return f"Error: {str(e)}"
+    except YouTubeTranscriptApiException as error:
+        return f"Error: {error!s}"
 
 
 if __name__ == "__main__":
