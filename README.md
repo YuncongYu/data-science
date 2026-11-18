@@ -11,124 +11,44 @@ The repository is organized so you can browse topics (notebooks), run small scri
 
 ## Installation
 
-This project uses `pixi` to manage the development environment. Install `pixi`
-following the instructions at https://prefix.dev/tools/pixi, then install
-dependencies with:
+This project uses `uv` and the checked-in `uv.lock` to manage dependencies.
+With `uv` installed, run this from the repository root:
 
 ```bash
-pixi install
+uv sync --locked
 ```
 
-For developers, use instead
-
-```bash
-pixi install --dev
-```
-
-
-If you prefer a traditional Python venv, create and activate a venv and then
-install dependencies (if a requirements file is added later):
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-# pip install -r requirements.txt
-```
+This creates the project environment and includes the `dev` dependency group
+by default. For project dependencies only, run `uv sync --locked --no-dev`.
 
 ## Usage
 
-- Open notebooks in `experiments/` with Jupyter notebook or JupyterLab.
+- Open notebooks in `experiments/` with `uv run jupyter notebook`.
 - Run small utilities from the project root, for example:
 
 ```bash
-python -m data_science.util.print_images
-```
-
-- Run tests with `pytest` (install it into your environment first):
-
-```bash
-pytest -q
+uv run python -m data_science.util.print_images
 ```
 
 ## Developer setup
 
-Follow these steps to prepare a development environment and install the dev
-tooling used by the project.
-
-1) Create / activate an environment
-
-- Using `pixi` (recommended for reproducible environments):
-
-	```bash
-	pixi install
-	# use `pixi run <cmd>` to run commands inside the pixi-managed environment
-	```
-
-- Using a Python `venv`:
-
-	```bash
-	python -m venv .venv
-	source .venv/bin/activate
-	python -m pip install --upgrade pip
-	```
-
-2) Install developer tools (preferred: pixi)
-
-Prefer adding development tools to your `pixi` environment so they are
-installed and managed by `pixi` rather than calling `pip` directly. Consult
-the pixi documentation for the exact manifest fields; after adding the dev
-dependencies run:
+After syncing the environment, run the development tools with `uv run`:
 
 ```bash
-pixi install
+uv run ruff check .
+uv run mypy data_science
+uv run pytest -q
 ```
-
-Run the developer tools inside the pixi-managed environment using `pixi run`:
-
-```bash
-pixi run ruff check .
-pixi run mypy data_science
-pixi run pytest -q
-```
-
-If you must work without `pixi`, use a Python virtual environment and install
-the tools locally (not recommended if you want reproducible team environments):
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -U ruff mypy pytest
-```
-
-3) Common developer commands
-
-- Lint the codebase: `pixi run ruff check .` (or `ruff check .` inside a venv)
-- Run static type checks: `pixi run mypy data_science`
-- Run the test-suite: `pixi run pytest -q`
-
-Add these commands to CI so they run automatically on pull requests.
 
 ### Pre-commit hooks
 
-This repository includes a Git pre-commit configuration at
-`.pre-commit-config.yaml`. We recommend installing `pre-commit` as a dev
-dependency in your `pixi` manifest and running the hook installer from the
-pixi-managed environment:
+Install the hooks configured in `.pre-commit-config.yaml` and run them against
+all files:
 
 ```bash
-pixi run pre-commit install
+uv run pre-commit install
+uv run pre-commit run --all-files
 ```
-
-To run the configured hooks against all files (useful for CI or one-off checks):
-
-```bash
-pixi run pre-commit run --all-files
-```
-
-If you cannot use `pixi`, install `pre-commit` in your local venv and run the
-same commands inside that environment. Adding the `pre-commit` step to CI is a
-good way to ensure consistent formatting and checks on pull requests.
 
 ## Project Structure
 
